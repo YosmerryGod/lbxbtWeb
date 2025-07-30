@@ -29,9 +29,10 @@ export default function Whitepaper() {
   backBtn.addEventListener("click", () => {
     const app = document.getElementById("app");
     app.innerHTML = "";
-    import('./hero.js').then(({ default: Hero }) => {
-      app.appendChild(Hero());
-    });
+
+    import('../script.js').then(({ default: initSPA }) => {
+  initSPA(); // Menjalankan ulang script utama
+});
   });
 
   // Header

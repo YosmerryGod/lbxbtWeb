@@ -72,8 +72,11 @@ export default function Navbar() {
   mobileTop.className = "flex flex-col items-start gap-6";
 
   const mobileLogo = document.createElement("div");
-  mobileLogo.className = "text-2xl font-bold text-white cursor-pointer";
-  mobileLogo.textContent = "LBXBT";
+  mobileLogo.className = "flex items-center gap-2 text-2xl font-bold text-white cursor-pointer";
+  mobileLogo.innerHTML = `
+    <img src="assets/hero.webp" alt="LBXBT Logo" class="w-8 h-8 rounded-full" />
+    <span>LBXBT</span>
+  `;
   mobileLogo.addEventListener("click", () => {
     showSection("hero");
     mobileNav.classList.add("-translate-x-full");
@@ -108,9 +111,21 @@ export default function Navbar() {
   desktopTop.className = "flex flex-col items-center";
 
   const desktopLogo = document.createElement("div");
-  desktopLogo.className = "text-2xl font-bold text-white mb-8 cursor-pointer";
-  desktopLogo.textContent = "LBXBT";
-  desktopLogo.addEventListener("click", () => showSection("hero"));
+  desktopLogo.className = "flex items-center gap-2 text-2xl font-bold text-white mb-8 cursor-pointer";
+  desktopLogo.innerHTML = `
+    <img src="assets/hero.webp" alt="LBXBT Logo" class="w-8 h-8 rounded-full" />
+    <span>LBXBT</span>
+  `;
+  desktopLogo.addEventListener("click", () => {
+  showSection("hero");
+
+  // Optional: close mobile nav if open
+  if (mobileNav && backdrop) {
+    mobileNav.classList.add("-translate-x-full");
+    backdrop.classList.add("hidden");
+  }
+});
+
 
   const desktopMenu = document.createElement("ul");
   desktopMenu.className = "flex flex-col space-y-6 text-sm text-white";
@@ -120,7 +135,7 @@ export default function Navbar() {
     a.href = "#";
     a.textContent = item.label;
     a.dataset.section = item.id;
-    a.className = "hover:text-yellow-400"; // Untuk hover warna kuning
+    a.className = "hover:text-yellow-400";
     li.appendChild(a);
     desktopMenu.appendChild(li);
   });
@@ -162,7 +177,6 @@ export default function Navbar() {
       allMenuLinks.forEach(l => l.classList.remove("active-link"));
       link.classList.add("active-link");
 
-      // Close mobile nav
       mobileNav.classList.add("-translate-x-full");
       mobileNav.classList.remove("translate-x-0");
       backdrop.classList.add("hidden");

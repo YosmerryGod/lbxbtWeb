@@ -121,3 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+export default function initSPA() {
+  document.dispatchEvent(new Event('DOMContentLoaded'));
+}
