@@ -62,12 +62,17 @@ export default function Hero() {
   `;
 
   // 👇 Event ke halaman whitepaper
-  docBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    const app = document.getElementById("app");
-    app.innerHTML = "";
-    app.appendChild(Whitepaper());
-  });
+docBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  // Ganti path URL
+  window.history.pushState({}, '', '/whitepaper');
+
+  // Render halaman whitepaper
+  const app = document.getElementById("app");
+  app.innerHTML = "";
+  app.appendChild(Whitepaper());
+});
 
   btnGroup.append(goBtn, docBtn);
   content.append(title, desc, btnGroup);

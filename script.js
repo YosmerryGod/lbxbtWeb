@@ -120,6 +120,24 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  window.addEventListener('popstate', () => {
+  const path = window.location.pathname;
+
+  const app = document.getElementById("app");
+  app.innerHTML = "";
+
+  if (path === "/whitepaper") {
+    import('./whitepaper.js').then(({ default: Whitepaper }) => {
+      app.appendChild(Whitepaper());
+    });
+  } else {
+    import('./script.js').then(({ default: initApp }) => {
+      initApp(); // Asumsinya script.js export default init function
+    });
+  }
+});
+
 });
 
 export default function initSPA() {

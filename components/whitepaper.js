@@ -27,13 +27,18 @@ export default function Whitepaper() {
     hover:underline text-sm md:text-base px-2 py-1
   `;
   backBtn.addEventListener("click", () => {
+    // Update URL ke halaman awal
+    window.history.pushState({}, '', '/');
+
+    // Reset ke halaman utama
     const app = document.getElementById("app");
     app.innerHTML = "";
 
     import('../script.js').then(({ default: initSPA }) => {
-  initSPA(); // Menjalankan ulang script utama
-});
+      initSPA(); // Menjalankan ulang script utama
+    });
   });
+
 
   // Header
   const heading = document.createElement("h1");
