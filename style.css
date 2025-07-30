@@ -1,0 +1,50 @@
+/* Root Variable Setup */
+:root {
+  --primary-color: #facc15; /* Tailwind yellow-400 */
+  --bg-dark: #000000;
+  --text-light: #ffffff;
+  --text-muted: #d1d5db; /* Tailwind gray-300 */
+  --font-main: 'Inter', sans-serif;
+}
+
+/* Global Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-main);
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.active-link {
+  color: #FACC15 !important; /* yellow-400 */
+}
+
+nav a {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+  transform: scale(1.05);
+  color: #FACC15 !important;
+}
+
+nav a.active-link {
+  color: #FACC15 !important;
+  transform: scale(1.1);
+}
+
+
