@@ -42,14 +42,16 @@ export default function Hero() {
   `;
 
   const goBtn = document.createElement("a");
-  goBtn.href = "#";
-  goBtn.textContent = "Go AI Agent";
-  goBtn.className = `
-    bg-yellow-400/80 text-black 
-    px-5 md:px-6 py-2.5 md:py-3 rounded-xl font-semibold 
-    text-sm md:text-base
-    hover:bg-yellow-300 transition
-  `;
+goBtn.href = "https://chat.lbxbt.tech";
+goBtn.target = "_blank"; // buka di tab baru
+goBtn.textContent = "Go AI Agent";
+goBtn.className = `
+  bg-yellow-400/80 text-black 
+  px-5 md:px-6 py-2.5 md:py-3 rounded-xl font-semibold 
+  text-sm md:text-base
+  hover:bg-yellow-300 transition
+`;
+
 
   const docBtn = document.createElement("a");
   docBtn.href = "#";
