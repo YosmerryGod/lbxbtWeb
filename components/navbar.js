@@ -2,14 +2,17 @@ export default function Navbar() {
   const fragment = document.createDocumentFragment();
 
   const createSocialIcons = () => `
-    <a href="#"><img src="assets/icon-tg.webp" alt="Telegram" class="w-6 h-6 object-contain filter brightness-0 invert" /></a>
-    <a href="https://instagram.com/lilbeanfun" target="_blank" rel="noopener">
-      <img src="assets/icon-ig.webp" alt="Instagram" class="w-6 h-6 object-contain filter brightness-0 invert" />
-    </a>
-    <a href="https://x.com/lilbeanBSC" target="_blank" rel="noopener">
-      <img src="assets/icon-x.webp" alt="X" class="w-6 h-6 object-contain filter brightness-0 invert" />
-    </a>
-  `;
+  <a href="https://t.me/LBXBT_COMMUNITY" target="_blank" rel="noopener">
+    <img src="assets/icon-tg.webp" alt="Telegram" class="w-6 h-6 object-contain filter brightness-0 invert" />
+  </a>
+  <a href="https://instagram.com/lilbeanfun" target="_blank" rel="noopener">
+    <img src="assets/icon-ig.webp" alt="Instagram" class="w-6 h-6 object-contain filter brightness-0 invert" />
+  </a>
+  <a href="https://x.com/lilbeanBSC" target="_blank" rel="noopener">
+    <img src="assets/icon-x.webp" alt="X" class="w-6 h-6 object-contain filter brightness-0 invert" />
+  </a>
+`;
+
 
   const sectionItems = [
     { id: "about", label: "Who’s Behind the Bot?" },
